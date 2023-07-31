@@ -1,6 +1,10 @@
 @use "../abstract/mixins";
 .container {
-  width: 90%;
+  max-width: 90%;
+  margin: 0 {
+    left: auto;
+    right: auto;
+  };
 }
 @include mixins.media-sm {
   .container {
@@ -19,6 +23,6 @@
 }
 @include mixins.media-xl {
   .container {
-    width: 1000px;
+    width: 80%;
   }
 }
