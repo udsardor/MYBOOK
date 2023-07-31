@@ -8,6 +8,10 @@ html {
   height: 100vh;
 }
 
+body {
+  height: 10000px;
+}
+
 a {
   text-decoration: none;
 }
@@ -54,22 +58,66 @@ body {
   color: #ffffff;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (max-width: 576px) {
   .nav-menu {
     display: flex;
   }
 }
+.main-banner {
+  background: url(/images/banner.png) no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+  background-position: 120%;
+  box-sizing: border-box;
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
-  padding: 58px;
+  padding: 58px 0;
   align-items: center;
 }
 .navigation-leftSide {
   display: flex;
+  align-items: center;
+}
+.navigation-leftSide__logo {
+  border-right: 1px solid #dedede;
+  padding: 0 15px 0 0;
+}
+.navigation-leftSide__icon {
+  padding: 0 15px;
 }
 .navigation .navigation-rightSide__items {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
+  gap: 45px;
+}
+.navigation .navigation-rightSide__items .navigation-rightSide__item {
+  color: #fff;
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
+.navigation .navigation-rightSide__items .navigation-rightSide__item-btn {
+  color: #000;
+  background-color: #fff;
+  font-family: Rubik;
+  font-family: Rubik;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 20px 80px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.navigation .navigation-rightSide__items .navigation-rightSide__item-btn:hover {
+  background-color: #eeeded;
+  transition: 0.3s ease;
 }
 .navigation .navigation-leftSide__logo-1 {
   color: #000;
@@ -87,19 +135,15 @@ body {
   font-weight: 500;
   line-height: normal;
 }
-
-.footer {
-  padding: 20px 40px;
-  text-align: center;
-  color: #ffffff;
-  background-color: #2C3F51;
+.navigation .navigation-leftSide__logo .navigation-leftSide__icon img {
+  width: 24px;
+  height: 24px;
 }
 
-@media screen and (min-width: 768px) {
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
 .footer {
@@ -109,7 +153,7 @@ body {
   background-color: #2C3F51;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .footer {
     position: fixed;
     bottom: 0;
@@ -123,51 +167,175 @@ body {
   margin-right: auto;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (max-width: 576px) {
   .container {
     width: 600px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .container {
     width: 700px;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
   .container {
     width: 900px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .container {
     width: 80%;
   }
 }
-.home {
-  margin: 0 auto;
-  padding: 50px;
-  text-align: center;
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
 }
-.home__image {
-  width: 200px;
-  margin: 0 auto;
+.main-section .main-section__leftSide-insight {
+  color: #000;
+  font-family: Rubik;
+  max-width: 600px;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 95px; /* 126.667% */
+  text-transform: uppercase;
+  margin: 20px 0;
 }
-.home__image img {
-  width: 100%;
+.main-section__leftSide-slogan {
+  color: #000;
+  font-family: Rambla;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  margin: 40px 0;
 }
-.home__title {
-  margin-top: 20px;
-  font-size: 48px;
-  color: #2C3E51;
-  cursor: pointer;
+.main-section__leftSide-input {
+  position: relative;
 }
-.home__title:hover {
-  font-size: 56px;
-  transition: all 1s ease-in-out;
+.main-section__leftSide-input input {
+  width: 406px;
+  height: 60px;
+  border: none;
+  outline: none;
+  background-color: #F5F6F8;
+  padding: 0 30px;
 }
-.home__description {
-  margin-top: 40px;
-  color: #2C3E51;
+.main-section__leftSide-input span {
+  position: absolute;
+  top: 30%;
+  left: 1%;
+}
+
+.main-section__rightSide img {
+  height: 750px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 576px) {
+  .main-section {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-section {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 992px) {
+  .main-section {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .main-section {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.books {
+  display: flex;
+}
+
+.recommended-books {
+  box-shadow: 2px 2px 2px #fff;
+}
+
+.recommended-book {
+  width: 400px;
+  display: flex;
+}
+.recommended-book > * {
+  padding: 15px;
+}
+.recommended-book__title {
+  color: #000;
+  font-family: Rubik;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 35px;
+  /* 140% */
+  text-transform: capitalize;
+}
+.recommended-book__author {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.recommended-book__titles {
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Rambla;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  /* 156.25% */
+  letter-spacing: 0.048px;
+}
+.recommended-book__rate > :nth-child(2) {
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 16px;
+  /* 100% */
+  letter-spacing: 0.032px;
+}
+
+.recommended-book__img img {
+  width: 147.454px;
+  height: 225.354px;
+}
+
+.recommended-books {
+  display: grid;
+  grid-template-columns: 450px 450px;
+  justify-content: space-between;
+}
+
+.books-part__popular {
+  margin-top: 100px;
+}
+.books-part__popular .popular-title {
+  color: #000;
+  font-family: Rubik;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.08px;
 }
 
 /*# sourceMappingURL=main.css.map */

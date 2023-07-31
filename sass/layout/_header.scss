@@ -2,16 +2,64 @@
 @use "../abstract/functions" as funcs;
 @use "../abstract/mixins";
 
+.main-banner {
+  background: url(/images/banner.png) no-repeat;
+  background-size: contain;
+  min-height: 100vh;
+  background-position:  120%;
+  box-sizing: border-box;
+}
+
 .navigation {
   display: flex;
   justify-content: space-between;
-  padding: 58px;
+  padding: 58px 0;
   align-items: center;
   &-leftSide {
     display: flex;
+    align-items: center;
+
+    &__logo {
+      border-right: 1px solid #dedede;
+      padding: 0 15px 0 0;
+    }
+    &__icon {
+      padding: 0 15px;
+    }
   }
+
   .navigation-rightSide__items {
-    display: flex;
+    display: inline-flex;
+    align-items: center;
+    gap: 45px;
+    .navigation-rightSide__item {
+      color: #fff;
+      font-family: Rubik;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      cursor: pointer;
+
+    }
+    .navigation-rightSide__item-btn {
+      color: #000;
+      background-color: #fff;
+      font-family: Rubik;
+      font-family: Rubik;
+      font-size: 25px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      padding: 20px 80px;
+      border-radius: 40px;
+      cursor: pointer;
+      &:hover {
+        background-color: #eeeded;
+        transition: 0.3s ease;
+      }
+    }
+    
   }
 
   .navigation-leftSide__logo {
@@ -31,20 +79,17 @@
       font-weight: 500;
       line-height: normal;
     }
+
+    .navigation-leftSide__icon img {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 
-.footer {
-  padding: 20px 40px;
-  text-align: center;
-  color: funcs.set-text-color(vars.$primary-bg-color);
-  background-color: vars.$primary-bg-color;
-}
-
-@include mixins.media-md {
-  .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+@include mixins.media-sm {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
   }
 }

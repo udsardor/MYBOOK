@@ -1,28 +1,78 @@
-@use "../abstract/variables";
 @use "../abstract/mixins";
-.home {
-  margin: 0 auto;
-  padding: 50px;
-  text-align: center;
-  &__image {
-    width: 200px;
-    margin: 0 auto;
-    img {
-      width: 100%;
-    }
+
+
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  & &__leftSide-insight {
+    color: #000;
+    font-family: Rubik;
+    max-width: 600px;
+    font-size: 75px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 95px; /* 126.667% */
+    text-transform: uppercase;
+    margin: 20px 0;
   }
-  &__title {
-    margin-top: 20px;
-    font-size: 48px;
-    color: variables.$secondary-text-color;
-    cursor: pointer;
-    &:hover {
-      font-size: 56px;
-      @include mixins.transition-ease;
-    }
+  &__leftSide-slogan {
+    color: #000;
+    font-family: Rambla;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+    margin: 40px 0;
+    
   }
-  &__description {
-    margin-top: 40px;
-    color: variables.$secondary-text-color;
+  &__leftSide-input {
+    position: relative;
+  }
+  &__leftSide-input input{
+    width: 406px;
+    height: 60px;
+    border: none;
+    outline: none;
+    background-color: #F5F6F8;
+    padding: 0 30px;
+  }
+  &__leftSide-input span {
+    position: absolute;
+    top: 30%;
+    left: 1%;
+  }
+}
+.main-section__rightSide img {
+  height: 750px;
+  object-fit: cover;
+}
+
+@include mixins.media-sm {
+  .main-section {
+    flex-direction: column;   
+    justify-content: center;
+  }
+}
+
+@include mixins.media-md {
+  .main-section {
+    flex-direction: column;   
+    justify-content: center;
+  }
+}
+
+@include mixins.media-lg {
+  .main-section {
+    flex-direction: column;   
+    justify-content: center;
+  }
+}
+
+@include mixins.media-xl {
+  .main-section {
+    flex-direction: column;   
+    justify-content: center;
   }
 }

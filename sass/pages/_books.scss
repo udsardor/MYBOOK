@@ -1,0 +1,85 @@
+.books {
+  display: flex;
+}
+.recommended-books {
+  box-shadow: 2px 2px 2px #fff ;
+
+}
+
+.recommended-book {
+  width: 400px;
+  display: flex;
+
+  & > * {
+    padding: 15px;
+  }
+
+  &__title {
+    color: #000;
+    font-family: Rubik;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35px;
+    /* 140% */
+    text-transform: capitalize;
+  }
+
+  &__author {
+    color: rgba(0, 0, 0, 0.6);
+    font-family: Rubik;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+
+  &__titles {
+    color: rgba(0, 0, 0, 0.3);
+    font-family: Rambla;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    /* 156.25% */
+    letter-spacing: 0.048px;
+  }
+
+  &__rate> :nth-child(2) {
+    color: rgba(0, 0, 0, 0.3);
+    font-family: Rubik;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 16px;
+    /* 100% */
+    letter-spacing: 0.032px;
+  }
+}
+
+.recommended-book__img img {
+  width: 147.454px;
+  height: 225.354px;
+}
+
+.recommended-books {
+  display: grid;
+  grid-template-columns: 450px 450px;
+  justify-content: space-between;
+}
+
+// popular 
+
+.books-part__popular {
+  margin-top: 100px;
+  .popular-title {
+    color: #000;
+    font-family: Rubik;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.08px;
+  }
+}
