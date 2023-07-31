@@ -1,0 +1,16 @@
+@use "../abstract/variables" as vars;
+@use "../abstract/functions" as funcs;
+@use "../abstract/mixins";
+.footer {
+  padding: 20px 40px;
+  text-align: center;
+  color: funcs.set-text-color(vars.$primary-bg-color);
+  background-color: vars.$primary-bg-color;
+}
+@include mixins.media-md {
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}

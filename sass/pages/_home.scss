@@ -1,0 +1,28 @@
+@use "../abstract/variables";
+@use "../abstract/mixins";
+.home {
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+  &__image {
+    width: 200px;
+    margin: 0 auto;
+    img {
+      width: 100%;
+    }
+  }
+  &__title {
+    margin-top: 20px;
+    font-size: 48px;
+    color: variables.$secondary-text-color;
+    cursor: pointer;
+    &:hover {
+      font-size: 56px;
+      @include mixins.transition-ease;
+    }
+  }
+  &__description {
+    margin-top: 40px;
+    color: variables.$secondary-text-color;
+  }
+}
